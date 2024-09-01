@@ -62,7 +62,7 @@ public class FODAnimation extends ImageView {
         mAnimParams.flags =  WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                 | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
         mAnimParams.gravity = Gravity.TOP | Gravity.CENTER;
-        mAnimParams.y = mPositionY - (mAnimationSize / 2) + mAnimationOffset;
+        mAnimParams.y = mPositionY - mAnimationSize + mAnimationOffset;
 
         setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         update();
@@ -85,7 +85,7 @@ public class FODAnimation extends ImageView {
     }
 
     public void updateParams(int positionY) {
-        mAnimParams.y = positionY - (mAnimationSize / 2) + mAnimationOffset;
+        mAnimParams.y = positionY - mAnimationSize + mAnimationOffset;
         mWindowManager.updateViewLayout(this, mAnimParams);
     }
 
